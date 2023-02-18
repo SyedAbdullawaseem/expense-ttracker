@@ -1,0 +1,426 @@
+ 
+ 
+    Q1.Where does the execution of React Js code start in the current project.
+	    
+		in the App.js react Js code is executed and all the component is attached with App.js  
+		
+		
+	Q2.Can you tell me why this happens
+	
+	  App is attached with index.js  where it is import the ReactDOM and render the App into the root html page which created by react
+	  and its display the in the browser
+	
+    Q3.What does this mean --> import './index.css', check the trainer's code
+	   
+	   In react have feacture to directly import the CSS file into the JS file , and it attached with JS file and use the CSS properties 
+	   there are no need to link the CSS file.
+	
+	Q4.How does this actually work <App />. I dont think it normally works in normal js , right?
+	
+	    the syntax <App/> not a Html ,it is new technique in a react which is created by react which is combination of Html and JS, so we can write html syntax in the Js file, which is technically called JSx syntax.
+		so this facilities not work in noraml Js file, it will work only in react.
+		
+	Q5.Why do we use the ReactDom used?
+	
+	   ReactDOM is a package that provides DOM specific methods that can be used at the top level of a web app to enable an efficient way of managing DOM elements of the web page. ReactDOM provides the developers with an API containing the following methods and a few more. 
+
+        render()
+        findDOMNode()
+        unmountComponentAtNode()
+        hydrate()
+        createPortal()
+    
+	Q6.What does the ReactDom.render method do?( Hint - This is some kind of DOM manipulation.)
+	 
+	   render() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React's DOM diffing algorithm for efficient updates. render() does not modify the container node (only modifies the children of the container).
+	   
+	Q7.What is this App component? What does it return?
+
+       App component is a like a gate way of all the others components , App component is attached with index.js file and all components are attached with Apps.js . it return the all the components in JSx formate basically App is return JSX
+	   
+	Q8.Can you return HTML like this in javascript too. Remember we always had to stringify it
+     
+        No we can not return the html in javascript like in a react , but we have other method to return the html in Js, we should keep the html in iside the template string or keep insie the quote.	 
+		
+	Q9.How does browser finally understand JSX?
+	
+	  As JSX is combination of HTML and JavaScript it is not supported by Browsers. So, if any file contains JSX file, Babel transpiler(npm) converts the JSX into JavaScript objects which becomes a valid JavaScript. Thus, browsers understands the code and executes.
+	  
+	Q10.What is the difference behind imperative(what normal JS uses ) and declarative approach (React uses).
+	
+	    in normal JS we have to define each and every step and give the direction this type the code is called imperative approach
+		and in react write code in Jsx  foramate i.e only decalre , and react automatically understand the path or direction this is called declarative approach.
+
+   	
+
+	Q11.What did you understand by component tree?Isn't it similar to the DOM tree.
+
+
+
+    	 In react all about component , we don't create entire page in one short we just split the whole page into the chunks after that we combined the all chunks of file to create a single page web application, so that we connect the all component in a tree pattern , like a DoM tree
+
+		 
+
+    Q12.Where does App component lie in the component tree?
+
+
+
+     App component act as a gate way of the all components ,so all the component are attached with App component and App component attached with index.js and index.js display the content in the browser.
+
+
+
+    Q13.Why do we have to Export the Expense-Item Component?	
+
+
+
+     in react we work in chunks of component so to combined all the component we should import the file into the App.js component	, so first we have  export the file to give access , after that this file will be import in App component and can access all the properties of Expense -Item.
+
+	  
+
+	Q14. How does React differentiate between custom made Components and normal HTML elements -- Asked frequently in Interview
+
+
+
+      to differentiate between custom made component and normal html, write html code in a small letter , and component first letter should be in a capital letter, so due to this camel case representation react easily identify the syntax. 
+	  
+	Q15.Why do we use className and not class?
+
+		The only reason behind the fact that it uses className over class is that the class is a reserved keyword in JavaScript and since we use JSX in React which itself is the extension of JavaScript, so we have to use className instead of class attribute.  
+		
+	Q16.Q1How can we use Javascript variables in react JS
+       To render a Javascript expression in JSX, all you need to do is surround the expression in curly braces
+	   
+	Q.17  What do you think is the advantage of the card element.
+	
+	   the advantage of the card element is we can pass the the component inside the component , thats why we create a crad component and  inside the card we pass the another component , due to this activity we code once and apply every where 
+	   
+	Q18.Why do we need React imported everywhere , what is the use?
+
+       The Browser does not understand React, it only understands HTML, CSS, and JavaScript. So to convert React into valid JavaScript we use a webpack called Babel. It is used to convert JSX into objects and then return that object. Babel is already included in the boilerplate generated by create-react-app.
+	   
+	Q19.Do custom components show in google elements tab?Why does this happen any idea?   
+	
+	Q20 Tell me why didnt the title update 
+
+       React not work like a simple JS . so, our component is a regular function which is return a JSX since it a function so some one has to call ,we never call our component function .
+	   
+ 	
+    Q21.What dataType does useState function return? What does each index mean
+      
+	  The value returned by useState() consists of an array with two values.
+       The first element is the initial state and the second one is a function that is used for updating the state.
+	   
+	
+    Q22. Why do we have to use setTitel() to update title ? Why dont we simply do title = 'new Title' ?
+     
+	 because it is in react is a synchronous and it run line by line  so ,once it start rendering it will stop until complete the entire code ,so we should tell to the react to manipulate the Dom ,for manipulation we should call the function .
+	  
+	
+    Q23. According to you setTitle is an async function or synchronous function. Answer this on the basis of that the  console.log(title) below it   gives old value even though you call setTitle() before. Think!!!!
+
+
+    ans.   it is a synchronous function because after complete the entire code it print the value of seTitile.
+	
+	
+    Q24. When we click on button only the corresponding title gets updated. What do you think is the reason
+
+        when  we clicked on button we pass the only the title parameter inside the useStete and  so when we click on button so react automatic update the title value.
+		
+    
+    Q25. How can we use const [title, setTitle] when we update title on clicking the button. Dont you think let should be used?
+
+     so with the help of useStete which is inbuild function of react  we can manipulate the DOM . The value returned by useState() consists of an array with two values. The first element is the initial state and the second one is a function that is used for updating the state.so inside the button function we have called ueeState function to update the title value.
+
+       
+     Q26.When does useState initialize the state.[Super Important Question]
+	  
+	   State is initialized only once when you create the component, this is how React works
+	   
+	Q27.  What happens when you update the state using setTitle . What do you think is the flow.  [Super Important Question]  
+	
+	    
+      React keeps track of the currently rendering component. we know that Hooks are only called from React components (or custom Hooks — which are also only called from React components).
+
+      There is an internal list of “memory cells” associated with each component. They’re just JavaScript objects where we can put some data. When you call a Hook like useState(), it reads the current cell (or initializes it during the first render), and then moves the pointer to the next one. This is how multiple useState() calls each get independent local state.
+	  
+	Q28 Can you tell the exact flow of data from ExpenseForm component to Expense Component as per the trainer
+
+
+		can create  event props we can expect functions values that would allow us to pass the function from parent component to child component and then called the function inside the child component , and when we done call the function we can pass the data to the function as parameter ,that's we communicate up child to parent.
+
+
+
+    Q29.Why did we have to lift the state up from NewExpense component to App component. Why cant we directly talk between NewExpense and Expense Component?
+  
+
+		we   can communicate  from NewExpense to App but we can not skip in between the component which is the parent componet of newExpense form 
+			
+		first newExpens child component pass the data to parent component  Expense form then Expense form communicate the App component to pass the the data to App.js. props can pass from child to parent we can not skip the intermediate .
+
+  
+
+    Q30. Why did the Udemy trainer even convert the code. Why doesn't he use ExpenseItem Component -> 4 times for showing 4 expenses. What do you think is the reason?
+
+     to convert the array of  object into the array of JSx formate that why we convert the code.
+     previously the page was static it displayed only data which is hard coded but  to make the page dynamic we convert the code into the an array instead of coping 4 time of ExpenseItem , ,so we have  JSX file so react will render it  and  whenever the user want add new expense it will add to dynamically and it will display on the screen.
+	 
+	
+	Q31.Why does the trainer uses state and not update the old expense variable. If you update the old expense variable like this expenses.push(expense). Why does this not work?
+
+		in react we can not update the variable directly like normal JS  , in React we have inbuilt function which is called useState  hook throw this we update the variable value.
+
+		if we we try to update the value like push method , it will not update the value of variable because it is a simple JS code which is not supported by react to update the value. 
+		
+	Q32 .What happens when you don't use keys ?
+
+		when we do not use key , whenever we add the item so react don't identify the order of list and it will add to the bottom of div  because react render this item as last item  , but  display it in the  top of the list , because after that it updates all the items and replace there content to matches the order of items of there array. this is happen because  react looks all the item is similar, and update the similar div at the bottom and after that it update the item to match the order of array.
+
+	Q33.What is the advantage of using keys? 
+		
+		with the help of the key value pairs it  would make the unique identity of  the every new items which would be add and react can easily identify the every newly added items and maintain the order of the list , and also it will prevent the replace the item by previous item  and  bugs . 
+
+	Q34.Why you should not use index as keys?
+
+		Although index manage the index value but   index is not directly attached with to the item content ,so it would lead to the bugs which might be change the previous item to newly items. 
+		
+ 	
+    Q35.What do you think is the use of maxValue props?
+        to  get the maximum value of array we use the this props to get the maximum amount in month it would display as a chart bar .
+
+
+
+    Q.36 What will label prop contain?
+
+       label props contain the label of the the month which is display  bottom of the chart bar.
+
+
+
+    Q37.Why do we need key prop?
+
+        we need the the key prop ,React's key prop gives you the ability to control component instances. Each time React renders your components,   		it's calling your functions to retrieve the new React elements that it uses to update the DOM. If you return the same element types, it keeps those components/DOM nodes around, even if all the props changed.
+
+
+
+    Q38.What is style used for?
+
+      it is used for dynamic  CSS styling  of inside the JSX syntax 
+
+    Q39.What datatype is the input of style ? Give an example too
+
+		The useStyles function is a React hook that can be used to generate CSS stylesheets and inject to custom components. It returns an object containing: classes : A map containing the generated classes, to be used as className of your components. css : The emotion's css function which is used to generate the classes.
+  
+    Q40. Why is the udemy trainer not happy with style?
+
+      trainer is not happy because it is inline styling and inline styling have higher priority than class base style so, it it will override the all the class base content
+
+    Q41.Why is class based. styling better?
+       
+	   the pages will become more compact, so will load faster. But of more benefit is , any style edits will be much simpler to manage and will be guaranteed to ...
+		
+	Q1.tell us what to do when such errors come. What are the 2 ways discussed
+
+		while  we delete the  recently added content so it wont , the delete handler delete the previous one which is added before the recent , 
+
+		so why this  happen, so this is happen due to we provide the id  the delete handler trigger this id to identifier should be unique, then it would delete the content , but we can see in  the code  we proved id as a in hard core string  which is not a unique for every recently added content , so it took similar id for every content . thats why it remove the the previous content .
+
+		while you open the browser console , and the we add the new content it shows clearly warning  message encounter children with same key (`name of key`)  key should be unique so that component maintain there identity across update  
+
+		there are two way of debugging  one is it clearly show the message in the browser console and the 2nd the go to the  source code and  then go to delete Hander code and put the debugger  and start the debugging 	
+
+
+
+     
+ 	                                                        // Limations of JSX//
+															  
+
+   Q1. What is the main limitation of JSX? How do we solve this. Give code example for each solution.
+
+   
+
+    the main limitation of JSX we can not return the side by side more than one JSX Element , because it throw an error . it is a also nature of normally JavaScript we can not return the more than one element. 
+
+		if we have return more than one JSX Element then we have to warped the element inside the one root element , normally we warp the all JSX element inside a div. it is would return only root element which is valid JSX syntax.
+
+		
+
+		ex. return(
+
+		   <h2> hi this Heading</h2>
+
+			<p> this is paragraph</p>
+
+		  )
+
+	  this is a problem we can not render the data by returning more than 2 root element. 
+
+			
+
+			return(
+
+			 <div>
+
+		          <h2> hi this Heading</h2>
+
+			      <p> this is paragraph</p>
+
+		      <div>  
+
+		    )
+
+		this is solution to warp the two main root element inside the one div which is become a root element .							 
+
+
+
+	Q2. What is div Soup? , please give example
+
+	
+
+	  div Soup is nothing it a bunch of warper element of the JSX code , which is unnecessarily render by react which cause to slow the webpage 
+
+	  
+
+	  ex. 
+	       <div>
+
+	           <div>
+
+				  <div>
+
+					  <div>
+
+						<h1> this is div soup</h1>
+
+				    </div>
+
+				  </div>
+
+				</div>
+
+	        </div>
+
+		  
+
+		in bigger apps you can easily end up with tons of unnecessarily <div>s or other element, which add no sematic meaning or structure to the page but are only there because of React JSX requirement.  
+
+    		
+    
+    Q3. How does wrapper component actually works.
+
+		 wrapper component create for for the replace the div so we create a wrapper component. Inside the wrapper component we return only props.children 
+
+		 and then we import in  user component and the we  simply wrap with wrapper component which is simply return the children of the user component so it render only one root element .
+
+
+
+    Q4. Does it add an extra element in the DOM ?
+
+	   no it does not add an extra element to the DOM , because DOM render only one component which wrapper component and inside the wrapper component we just return the children which all hold  JSX element of the user component . it rendered only one component which wrapper . 
+
+
+    
+    Q5.How does react fragment work.
+
+		It is an empty wrapper component  it does not rendered any real HTML component  element to the DOM  but full fill the react JSX requirement
+		React fragments serve as a cleaner alternative to using unnecessary divs in our code. These fragments do not produce any extra elements in the DOM, which means that a fragment's child components will render without any wrapping DOM node.
+
+    Q6. Is it similar to wrapper components. 
+
+        yeh it almost similar the wrapper component because  fragment  does not render any real html element same as  the wrapper component 
+
+    Q7.Does it add an extra element in the DOM 
+
+      no same as wrapper component it does not add an extra element to the DOM
+
+        ex.    <React.Fragment>
+
+					 <div>
+
+					 </div>                                       
+
+			   </React.Fragment>
+
+
+
+		or simply 
+
+			   <>
+
+					<div>
+
+					</div>                                       
+
+			   </>
+
+
+
+    Q1.What are refs? What is the advantage you get using refs?
+
+		ref is another type of hook which is a function provide by the react we can render the html component directly with the help of simple ref hook , we do not need to set the value . if we want to render only readable content and in future we do not want to user in other component then we can use  this simple ref hooks
+
+        The benefit of using useRef() over createRef() is that it’s handy for keeping any mutable value around similar to handy the normal html element .
+
+    Q2.What are controlled and uncontrolled components ?
+
+		 we have two hooks 1 useState which also called controlled hook and the  2nd  one is useRef  which is called uncontrolled hooks. 
+
+		In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself. To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
+
+
+    Q1.What are side effects in React according to you
+
+		A React side-effect occurs when we use something that is outside the scope of React.js in our React components e.g. the Browser APIs like localStorage.
+
+		What do I mean by outside of the React scope?
+
+		It means that it is not part of the React framework, for example, the localStorage in your browser.
+
+		When we use React with any of the Browser’s API such as the localStorage, we are creating side-effects.
+
+		For example, if we run this code, we are creating a side-effect by storing some value in localStorage.
+
+		If we use the native DOM methods instead of the ReactDOM is another example of creating side-effects:
+
+	Q2.What is the problem that side effect can cause .
+
+		The main thing we should be concerned with is whether we can manage these side-effects effectively.
+
+		What do I mean by managing the side-effects effectively?
+
+		I mean can we easily keep track of the changes in the side-effects and whether we can manage the side-effects in a single place or a single component within our frontend application.
+
+	Q3.How does useEffect hook works and solve the problem.
+
+		By using this Hook, we tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates
+
+
+
+
+
+
+
+
+
+
+
+
+			   
+			   
+
+	
+
+
+ 		
+
+
+
+  
+
+   
+
+   
+
+
+
+     
+
+	
